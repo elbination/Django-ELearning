@@ -26,7 +26,8 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('course/', include('courses.urls')),
     path('', CourseListView.as_view(), name='course_list'),
-    path('students/', include('students.urls'))
+    path('students/', include('students.urls')),
+    path('api/', include('courses.api.urls', namespace='api'))
 ]
 
 if settings.DEBUG:
